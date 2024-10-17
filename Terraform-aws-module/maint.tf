@@ -11,6 +11,11 @@ module "vpc" {
    
 }
 
+module "internet_gateway" {
+  source       = "./modules/internetGateWay"  # Path to the IGW module
+  vpc_id      = module.vpc.vpc_id
+  gateway_name = "MyInternetGateway"
+}
 module "public-subnet" {
   source = "./modules/public-subnet"
   vpc_id   = module.vpc.vpc_id
