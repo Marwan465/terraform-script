@@ -3,7 +3,7 @@
   ### Deliverables
 - [Terraform Module](https://github.com/Marwan465/terraform-script/tree/main/Terraform-aws-module) 
 
-  ### Goals 
+### Goals 
 - provision backend machine with 1 core - 1 GB RAM - 8 GB disk with public ip (ubuntu 22.04)
 - Provision frontend machine with 1 core - 1 GB RAM - 8 GB disk with public ip (ubuntu 22.04
 - Provision mysql community version 8 rds with the lowest plan(with no internet exposure)
