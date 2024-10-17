@@ -30,7 +30,7 @@ variable "private_subnet_cidr" {
  
 variable "ami" {                               // Amazon Machine Image
   description = "ID of the AMI"
-  default     = "ami-09d3b3274b6c5d4aa"  # ami-xxxxxxxxxxxxxxxxx Replace with your valid AMI ID 09d3b3274b6c5d4aa for ubuntu 22.04
+  default     = "ami-07ee04759daf109de"  # ami-xxxxxxxxxxxxxxxxx Replace with your valid AMI ID 09d3b3274b6c5d4aa for ubuntu 22.04 you can check here https://cloud-images.ubuntu.com/locator/ec2/
 }
 
 variable "instance_type" {
