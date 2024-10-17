@@ -24,8 +24,9 @@ module "public-subnet" {
 
 module "private-subnet" {
   source = "./modules/private-subnet"
+  for_each = var.private_subnets
   vpc_id   = module.vpc.vpc_id
-  private_subnet_cidr  = var.private_subnet_cidr
+  private_subnet_cidr  = each.value.cidr_block
 }
 
 module "security-group" {
