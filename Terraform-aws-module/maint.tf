@@ -11,11 +11,7 @@ module "vpc" {
    
 }
 
-module "internet_gateway" {
-  source       = "./modules/internetGateWay"  # Path to the IGW module
-  vpc_id      = module.vpc.vpc_id
-  gateway_name = "MyInternetGateway"
-}
+
 module "public-subnet" {
   source = "./modules/public-subnet"
   vpc_id   = module.vpc.vpc_id
@@ -27,6 +23,13 @@ module "private-subnet" {
   for_each = var.private_subnets
   vpc_id   = module.vpc.vpc_id
   private_subnet_cidr  = each.value.cidr_block
+}
+module "internet_gateway" {
+  source       = "./modules/internetGateWay"  # Path to the IGW module
+  subnet_id    = module.public-subnet.public_subnet_id
+  vpc_id       = module.vpc.vpc_id
+  gateway_name = "MyInternetGateway"
+  route_table_name = "MyRouteTable"
 }
 
 module "security-group" {
