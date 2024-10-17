@@ -97,6 +97,12 @@ variable "rds_config" {
     db_name             = "mydb"
     username            = "admin"
     password            = "adminpassword"
-    publicly_accessible = false
+    publicly_accessible = false           // No public IP
   }
+}
+
+variable "alert_email" {
+  description = "Email to receive CloudWatch alerts"
+  type        = string
+  default = "someone@gmail.com"
 }

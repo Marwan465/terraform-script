@@ -64,3 +64,15 @@ module "mysql_rds" {
   publicly_accessible    = var.rds_config.publicly_accessible
   
 }
+
+module "backend_alarm" {
+  source      = "./modules/alarm"
+  instance_id = module.ec2["backend"].instance_id
+  email       = var.alert_email
+}
+
+module "frontend_alarm" {
+  source      = "./modules/alarm"
+  instance_id = module.ec2["frontend"].instance_id
+  email       = var.alert_email
+}
