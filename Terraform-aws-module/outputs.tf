@@ -30,4 +30,11 @@ output "mysql_rds_endpoint" {
   description = "The endpoint of the MySQL RDS instance"
   value       = module.mysql_rds.rds_endpoint 
 }
-
+output "backend_CPU_Alarm" {
+  description = "CPU alarm for 50% usage"
+  value =  module.backend_alarm.cloudwatch_metric_alarm_id
+}
+output "backend_CPU_Alarm" {
+  description = "CPU alarm for 50% usage"
+  value =  module.frontend_alarm.cloudwatch_metric_alarm_id
+}
