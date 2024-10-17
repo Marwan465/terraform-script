@@ -58,14 +58,14 @@ variable "instances" {
     "backend" = {
       name = "backend-machine"
       tags = {
-        Environment = "production"
+        Environment = "test"
         Team        = "backend"
       }
     }
     "frontend" = {
       name = "frontend-machine"
       tags = {
-        Environment = "production"
+        Environment = "test"
         Team        = "frontend"
       }
     }
@@ -88,7 +88,7 @@ variable "rds_config" {
     username            = string
     password            = string
     publicly_accessible = bool
-    security_group_ids  = list(string)
+    
   })
   default = {
     allocated_storage   = 20

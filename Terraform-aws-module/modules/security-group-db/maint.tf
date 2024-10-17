@@ -6,7 +6,7 @@ resource "aws_security_group" "DB" {
     from_port   = 3306
     to_port     = 3306
     protocol    = "tcp"
-    cidr_blocks = ["${var.backend_instance_private_ip}/24"]
+    cidr_blocks = ["${var.backend_private_ip}/24"]
   }
 }
 

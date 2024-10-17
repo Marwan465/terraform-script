@@ -37,3 +37,8 @@ variable "public_ip" {
   type        = bool
   default     = false
 }
+
+variable "root_volume_size" {
+  description = "Disk size"
+  type = number
+}

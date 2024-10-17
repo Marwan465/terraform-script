@@ -3,11 +3,11 @@ resource "aws_db_instance" "mysql" {
   engine                 = "mysql"
   engine_version         = var.engine_version
   instance_class         = var.instance_class
-  name                   = var.db_name
+  db_name                = var.db_name
   username               = var.username
   password               = var.password
   publicly_accessible    = var.publicly_accessible
-  vpc_security_group_ids = var.vpc_security_group_ids
+  vpc_security_group_ids = [var.security_group_id]
 
   skip_final_snapshot = true
 

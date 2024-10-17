@@ -27,11 +27,7 @@ module "security-group" {
   source   = "./modules/security-group"
   vpc_id   = module.vpc.vpc_id
 }
-module "security-group-db" {
-  source   = "./modules/security-group"
-  vpc_id   = module.vpc.vpc_id
-  backend_instance_private_ip     = module.ec2["backend"].private_ip
-}
+
 
 module "ec2" {
   source              = "./modules/ec2"
@@ -48,9 +44,17 @@ module "ec2" {
   public_ip           = true     
 }
 
+module "security-group-db" {
+  source   = "./modules/security-group-db"
+  vpc_id   = module.vpc.vpc_id
+  backend_private_ip   = module.ec2["backend"].private_ip
+}
+
 # MySQL RDS instance module
 module "mysql_rds" {
   source                 = "./modules/mysql_rds"
+  subnet_id              = module.private-subnet.private_subnet_id
+  security_group_id      = module.security-group-db.security_group_id
   allocated_storage      = var.rds_config.allocated_storage
   engine_version         = var.rds_config.engine_version
   instance_class         = var.rds_config.instance_class
@@ -58,5 +62,5 @@ module "mysql_rds" {
   username               = var.rds_config.username
   password               = var.rds_config.password
   publicly_accessible    = var.rds_config.publicly_accessible
-  security_group_id      = module.security-group-db.security_group_id
+  
 }

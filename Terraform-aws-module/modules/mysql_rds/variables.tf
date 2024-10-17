@@ -1,3 +1,7 @@
+variable "subnet_id" {
+  description = "ID of the subnet"
+}
+
 variable "allocated_storage" {
   description = "The size of the RDS storage in GB"
   type        = number
@@ -33,7 +37,9 @@ variable "publicly_accessible" {
   type        = bool
 }
 
-variable "vpc_security_group_ids" {
-  description = "List of VPC security group IDs to associate with the RDS instance"
-  type        = list(string)
+
+variable "security_group_id" {
+  description = "security group ID to associate with the RDS instance"
+  type        = string
 }
+
