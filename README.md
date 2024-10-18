@@ -4,7 +4,7 @@
 - [Terraform Module](https://github.com/Marwan465/terraform-script/tree/main/Terraform-aws-module)
 - [Github Action yml file for backend repo](https://github.com/Marwan465/ObelionBackend/blob/11.x/.github/workflows/deploy.yml)
 - [Github Action yml file for frontend repo](https://github.com/Marwan465/Obelion-Frontend/blob/master/.github/workflows/deploy.yml)
-- [Migration Plan]()
+- [Migration Plan](https://github.com/Marwan465/terraform-script/blob/main/README.md#migration-plan)
 
 ### Goals 
 - provision backend machine with 1 core - 1 GB RAM - 8 GB disk with public ip (ubuntu 22.04)
