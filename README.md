@@ -4,6 +4,7 @@
 - [Terraform Module](https://github.com/Marwan465/terraform-script/tree/main/Terraform-aws-module)
 - [Github Action yml file for backend repo](https://github.com/Marwan465/ObelionBackend/blob/11.x/.github/workflows/deploy.yml)
 - [Github Action yml file for frontend repo](https://github.com/Marwan465/Obelion-Frontend/blob/master/.github/workflows/deploy.yml)
+- [Migration Plan]()
 
 ### Goals 
 - provision backend machine with 1 core - 1 GB RAM - 8 GB disk with public ip (ubuntu 22.04)
@@ -14,6 +15,8 @@
 - any update on the main branch in the laravel php app repo must initiate an automatic deployment that accesses an ubuntu 22.04 server machine to execute a shell script that does the following.
    - pull the new changes
    - run "php artisan migrate" to apply schema changes automatically
+- Migrate our infrastructure and assets from AWS to Azure
+
 
 
 
