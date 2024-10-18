@@ -35,7 +35,7 @@ Once the migration sync is complete stop the traffic to the old database and rou
   Use AzCopy to carry out this step by copying directly from an S3 bucket to Azure Blob.
 
 4. #### Github Actions or CI/CD pipelines
-Make sure we change it to build and deploy to our new cloud provider (Azure)
+Make sure we change our CI/CD pipelines to build and deploy to our new cloud provider (Azure)
   
 
 
