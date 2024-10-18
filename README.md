@@ -19,8 +19,22 @@
 
 
 ### Migration Plan
+1. #### Infrastructure Assessment 
+  We need to assess the infrastructure we have on AWS and recreate it on Azure but since we already provisioned our AWS infrastructure using terraform modules we can easily create the same infrastructure on azure using the same module we will have to change the provider and the resource types according to our new cloud provider Azure in this case.
 
+2. #### Database Migration
+  We can use Azure native migration tool Azure Database Migration Service (DMS) to carry out this migration
+Start by using DMS to identify potential issues during migration (schema, compatibility, etc.).
+Configure DMS to perform an online migration for minimal downtime.
+Set up continuous sync during the migration process to ensure the target database is constantly updated.
+Once the migration sync is complete stop the traffic to the old database and routing it to the new one.
 
+3. #### Application Assets
+  Use AzCopy to carry out this step by copying directly from an S3 bucket to Azure Blob.
+
+4. #### Github Actions or CI/CD pipelines
+Make sure we change it to build and deploy to our new cloud provider (Azure)
+  
 
 
 
