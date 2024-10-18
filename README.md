@@ -18,6 +18,8 @@
 - Migrate our infrastructure and assets from AWS to Azure
 
 
+
+
 ### Migration Plan
 1. #### Infrastructure Assessment 
   We need to assess the infrastructure we have on AWS and recreate it on Azure but since we already provisioned our AWS infrastructure using terraform modules we can easily create the same infrastructure on azure using the same module we will have to change the provider and the resource types according to our new cloud provider Azure in this case.
